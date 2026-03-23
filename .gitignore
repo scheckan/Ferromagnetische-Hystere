@@ -1,0 +1,81 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# C extensions
+*.egg
+*.egg-info/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# The folder template for virtual environments
+.venv/
+
+# VS Code settings
+.vscode/
+
+# PyEnv
+.python-version
+
+# Test output
+pytest*.log
+
+# mypy
+.mypy_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# coverage report
+htmlcov/
+.coverage
+.coverage.*
+
+# PyInstaller
+*.spec
+
+# SQLite database
+*.db
+
+# log files
+*.log
+
+# IDEs and editors
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vscode*
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.pdf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# LaTeX build directories
+_minted-*/
+build/

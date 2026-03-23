@@ -1,0 +1,109 @@
+\documentclass[a4paper,11pt]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{libertine}
+
+% Formeln
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[version=4]{mhchem}
+
+% Graphiken und Layout
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[separate-uncertainty=true, locale=DE]{siunitx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\raggedright
+
+\vspace*{2cm}
+
+{\LARGE\textbf{\textsf{Praktikum Physikalische Eigenschaften von Materialien}}}
+
+\vspace{0.5cm}
+
+{\large Universität Augsburg\\
+Wintersemester 2025/2026}
+
+\vspace{5cm}
+
+{\large\textbf{Versuch 2: Solarzelle}}
+
+\vspace{1cm}
+
+\begin{tabular}{ll}
+\textbf{Gruppe:} & H \\
+\textbf{Versuchsdatum:} & 04.03.2026 \\
+\textbf{Abgabedatum:} & 31.03.2026 \\
+\end{tabular}
+
+\vspace{1.5cm}
+
+Gemeinsames Versuchsprotokoll
+
+\vspace{0.5cm}
+
+Yvonne Bober \\
+Antonia Scheck
+
+\vfill
+
+% --- Logo unten rechts ---
+\begin{flushright}
+\includegraphics[width=10cm]{Logo.png}
+\end{flushright}
+
+\end{titlepage}
+
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+\cleardoublepage 
+
+%\addcontentsline{toc}{section}{Tabellenverzeichnis}
+%\listoftables
+%\cleardoublepage
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{Einleitung}
+\input{Theorie}
+\input{Versuchsaufbau}
+\input{Auswertung_und_Diskussion}
+\input{Zusammenfassung}
+\input{Anhang}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{Literatur}
+\bibliographystyle{unsrt}
+\bibliography{Literatur}
+
+
+\end{document}
