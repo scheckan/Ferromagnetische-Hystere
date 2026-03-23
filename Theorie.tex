@@ -1,4 +1,160 @@
 \section{Theorie} \label{sec:theorie}
 \subsection{Die Solarzelle}
+m vorliegenden Versuch werden grundlegende Zusammenhänge des Magnetismus sowie das Verhalten ferromagnetischer Materialien untersucht. Besonders im Fokus steht dabei die sogenannte Hysterese, also die verzögerte Reaktion der Magnetisierung auf ein äußeres Magnetfeld.
 
-\newpage
+Magnetfelder und Spulen
+
+Ein elektrischer Strom erzeugt stets ein Magnetfeld, was sich grundlegend durch das Biot-Savart-Gesetz beschreiben lässt. Dieses zeigt, dass bewegte Ladungen ein kreisförmiges Magnetfeld erzeugen. Allgemein gilt zudem, dass Magnetfeldlinien immer geschlossen sind und keine isolierten magnetischen Pole existieren (∇·B = 0) .
+
+Für den Versuch besonders relevant ist das Magnetfeld einer Spule. Eine lange Spule mit vielen Windungen erzeugt im Inneren ein nahezu homogenes Magnetfeld, das sich näherungsweise durch
+
+B≈μ0NIL
+B≈μ
+0
+	​
+
+L
+NI
+	​
+
+
+beschreiben lässt. Hierbei sind 
+N
+N die Windungszahl, 
+I
+I die Stromstärke und 
+L
+L die Länge der Spule. Diese Beziehung ist wichtig für die spätere Umrechnung von Strom in magnetische Feldstärke 
+H
+H.
+
+Außerhalb der Spule nimmt das Magnetfeld deutlich ab und kann im Fernfeld als Dipolfeld beschrieben werden. Dies erklärt auch die Form der gemessenen Feldlinien im ersten Versuchsteil.
+
+Magnetisierung und Permeabilität
+
+Wird ein Material in ein Magnetfeld gebracht, so reagiert es durch eine sogenannte Magnetisierung 
+M
+M. Diese entsteht durch die Ausrichtung mikroskopischer magnetischer Dipole im Material. Der Zusammenhang zwischen Magnetfeld 
+B
+B, Feldstärke 
+H
+H und Magnetisierung ist gegeben durch
+
+B=μ0(H+M)
+B=μ
+0
+	​
+
+(H+M)
+
+Für viele Materialien ist 
+M
+M proportional zu 
+H
+H, sodass man schreiben kann:
+
+B=μ0μrH
+B=μ
+0
+	​
+
+μ
+r
+	​
+
+H
+
+Die dimensionslose Größe 
+μr
+μ
+r
+	​
+
+ wird als relative Permeabilität bezeichnet und beschreibt, wie stark ein Material das Magnetfeld verstärkt .
+
+Diese Größe spielt im dritten Versuchsteil eine zentrale Rolle, da sie über die induzierte Spannung in einer zweiten Spule bestimmt wird. Dabei wird ausgenutzt, dass ein ferromagnetischer Kern den magnetischen Fluss stark bündelt und somit die Induktivität erhöht.
+
+Induktive Kopplung
+
+Werden zwei Spulen über einen gemeinsamen Eisenkern gekoppelt, so kann eine Stromänderung in der ersten Spule eine Spannung in der zweiten Spule induzieren. Dieser Effekt wird durch die gegenseitige Induktivität 
+M
+M beschrieben:
+
+Uind=−MdIdt
+U
+ind
+	​
+
+=−M
+dt
+dI
+	​
+
+
+Die Stärke der Kopplung hängt dabei stark vom Material des Kerns ab. Ein geschlossener Eisenkern mit hoher Permeabilität ermöglicht nahezu vollständige Kopplung, während Luftspalte den magnetischen Fluss deutlich verringern .
+
+Ferromagnetismus und Weiss’sche Bezirke
+
+Ferromagnetische Materialien wie Eisen besitzen eine besondere mikroskopische Struktur. Sie bestehen aus sogenannten Weiss’schen Bezirken, in denen die magnetischen Momente bereits ohne äußeres Feld parallel ausgerichtet sind.
+
+Ohne äußeres Magnetfeld sind diese Bezirke jedoch zufällig orientiert, sodass sich ihre Wirkungen gegenseitig aufheben. Wird ein äußeres Feld angelegt, wachsen die Bezirke in Feldrichtung und die Magnetisierung steigt stark an.
+
+Dieser Prozess ist jedoch nicht vollständig umkehrbar, da Gitterfehler und innere Spannungen eine Rückorientierung behindern. Genau daraus resultiert das Phänomen der Hysterese.
+
+Hysterese
+
+Die Hysterese beschreibt die Tatsache, dass die magnetische Flussdichte 
+B
+B nicht nur vom aktuellen Wert der Feldstärke 
+H
+H, sondern auch von deren Verlauf abhängt. Trägt man 
+B
+B gegen 
+H
+H auf, erhält man eine charakteristische Hystereseschleife.
+
+Wichtige Kenngrößen dieser Kurve sind:
+
+Sättigungsflussdichte 
+Bsat
+B
+sat
+	​
+
+: maximale Magnetisierung bei starker Feldstärke
+Remanenz 
+Br
+B
+r
+	​
+
+: verbleibende Magnetisierung bei 
+H=0
+H=0
+Koerzitivfeld 
+Hc
+H
+c
+	​
+
+: Feldstärke, die benötigt wird, um 
+B=0
+B=0 zu erreichen
+
+Diese Größen sind entscheidend für die Auswertung des zweiten Versuchsteils.
+
+Ein weiterer wichtiger Aspekt ist, dass die Fläche der Hystereseschleife einem Energieverlust entspricht:
+
+W=∮H dB
+W=∮HdB
+
+Dieser Verlust tritt bei periodischer Magnetisierung als Wärme auf und ist besonders in technischen Anwendungen relevant.
+
+Magnetisch weiche und harte Materialien
+
+Je nach Form der Hysteresekurve unterscheidet man zwischen:
+
+magnetisch weichen Materialien: kleine Hysterese, geringe Verluste, z. B. Transformatorbleche
+magnetisch harten Materialien: große Hysterese, hohe Remanenz, z. B. Permanentmagnete
+
+Im Versuch werden ein Vollkern und ein geblätterter Kern verglichen. Der geblätterte Kern reduziert Wirbelstromverluste und zeigt typischerweise ein anderes Hystereseverhalten.
