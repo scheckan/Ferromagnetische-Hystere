@@ -11,6 +11,7 @@ B = [
     -1.007, -1.157, -0.978, -1.405, -1.621, -1.811, -1.976,
     -2.129, -2.319, -2.468, -2.685, -2.826, -3.016, -3.223, -3.441
 ]
+B = [-b for b in B]
 
 H = [
     180, 875.29412, 1771.76471, 2647.05882, 3525.88235, 4478.82353,
@@ -33,7 +34,7 @@ plt.figure(figsize=(7, 5))
 plt.plot(H, B, marker='o', linewidth=1)
 plt.xlabel("H (A/m)")
 plt.ylabel("B (mT)")
-plt.title("Hysteresekurve")
+plt.title("Hysteresekurve des Vollkerns")
 plt.grid(True)
 plt.tight_layout()
 plt.show()

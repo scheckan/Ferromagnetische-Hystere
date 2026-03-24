@@ -1,22 +1,85 @@
 \subsection{Feldlinien-Diagramm}\label{sec:Aufgabe1}
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\linewidth]{Magnetfeldlinien.png}
+    \includegraphics[width=0.8\linewidth]{Magnetfeldlinien.png}
     \caption{Feldliniendiagramm der Spule durch graphische Auswertung der Messdaten.} \label{fig:Feldlinien}
 \end{figure}
 
-Das aus den Messdaten erstellte Feldliniendiagramm zeigt eine klare Struktur des Magnetfeldes der Spule. Im zentralen Bereich um die Spule verlaufen die Feldlinien überwiegend horizontal und sind vergleichsweise dicht beieinander. Dies deutet auf ein starkes und annähernd homogenes Magnetfeld entlang der Spulenachse hin. Besonders im Bereich nahe 
-x≈0
-x≈0 ist zu erkennen, dass die Feldlinien nur gering gekrümmt sind, was dem theoretisch erwarteten Verhalten im Inneren einer Spule entspricht.
+Das Feldliniendiagramm in Abbildung \ref{fig:Feldlinien} wurde auf Grundlage der gemessenen Magnetfeldstärken graphisch erstellt. Die Messpunkte wurden entsprechend ihrer räumlichen Position angeordnet und mit Pfeilen versehen, die sowohl die Richtung als auch die relative Stärke des Magnetfeldes darstellen. Zusätzlich dient eine Farbskala der Veranschaulichung der Feldstärke, wobei dunklere Farben höhere Feldbeträge kennzeichnen. Die Leerstelle im Zentrum entspricht der Position der Spule selbst, in der keine Messungen durchgeführt wurden. \\
+Grundsätzlich zeigt sich der erwartete Verlauf eines Spulenfeldes: Die Feldlinien treten auf der rechten Seite aus und werden auf der linken Seite wieder zurückgeführt. Im Inneren einer idealen Spule verlaufen die Feldlinien dicht und nahezu parallel, was auf ein homogenes Magnetfeld hindeutet. Da im vorliegenden Versuch jedoch nur außerhalb der Spule Messpunkte aufgenommen wurden, kann dieser Bereich nicht direkt dargestellt werden. Dennoch lässt sich aus dem Verlauf unmittelbar nach dem Austritt erkennen, dass die Feldlinien zunächst nur schwach gekrümmt sind, was auf ein starkes und annähernd homogenes Feld im Inneren schließen lässt. \\
+Auffällig ist, dass die Feldstärke direkt am Spulenaustritt teilweise geringer erscheint als in etwas weiter entfernten Zonen. Dies widerspricht zunächst der physikalischen Erwartung, da das Magnetfeld in unmittelbarer Nähe zur Spule sein Maximum besitzen sollte. Die beobachtete Abweichung lässt sich jedoch auf die Art der grafischen Darstellung im Streamplot zurückführen.
+Zum einen beruht der Plot auf diskreten Messpunkten, zwischen denen interpoliert wird. In Bereichen mit starken Gradienten, insbesondere am Rand der Spule, führt diese Interpolation oft zu einer Glättung, wodurch lokale Maxima abgeschwächt erscheinen. Zum anderen kann die Skalierung der Vektoren die Wahrnehmung der Feldstärke verfälschen: Häufig werden Pfeile im Streamplot normiert, sodass ihre Länge nicht direkt proportional zur tatsächlichen Feldstärke ist. Auf diese Weise entsteht unter Umständen der Eindruck eines schwächeren Feldes, selbst wenn die Farbskala höhere Werte ausweist. Darüber hinaus beeinflusst auch die gewählte Dichte der Stromlinien das Erscheinungsbild. Die Linien werden so verteilt, dass das Diagramm insgesamt ausgewogen wirkt. Dadurch werden Bereiche mit starkem Feld nicht zwangsläufig durch eine größere Liniendichte hervorgehoben, was die visuelle Interpretation zusätzlich erschwert. \\
+Mit wachsendem Abstand von der Spule verändert sich die Feldstruktur deutlich: Die Feldlinien biegen nach oben und unten ab und bilden in den äußeren Regionen geschlossene, bogenförmige Verläufe. Gleichzeitig nimmt die Feldstärke insgesamt ab, was sich sowohl an der geringeren Liniendichte als auch an der helleren Farbgebung zeigt. \\
+Zur Überprüfung der Fernfeldnäherung wird das Magnetfeld im äußeren Bereich der Spule betrachtet. Im Fernfeld kann die Spule als magnetischer Dipol beschrieben werden, sodass gilt
 
-Mit zunehmendem Abstand von der Spule verändert sich die Struktur der Feldlinien deutlich. Bereits wenige Zentimeter außerhalb des Zentrums beginnen sich die Feldlinien sichtbar nach oben und unten aufzukrümmen. In den äußeren Bereichen des Diagramms (insbesondere für große 
-∣x∣-Werte) bilden die Feldlinien geschlossene, bogenförmige Verläufe aus. Dabei ist gut zu erkennen, dass die Feldlinien auf der rechten Seite der Spule austreten, nach außen verlaufen und auf der linken Seite wieder zurückgeführt werden.
+\begin{equation}
+B(r) \propto \frac{1}{r^3}. \label{eq:Fernfeld}
+\end{equation}
 
-Diese Struktur entspricht qualitativ dem Magnetfeld eines Dipols, wie es durch die Fernfeldnäherung beschrieben wird . Insbesondere die symmetrische Schleifenform oberhalb und unterhalb der Spulenachse sowie die zunehmende Ausdünnung der Feldlinien mit wachsendem Abstand stimmen gut mit der theoretischen Erwartung überein. Auch die Farbskala zeigt, dass die Feldstärke außerhalb der Spule deutlich abnimmt, was mit dem schnellen Abfall des Dipolfeldes konsistent ist.
+\noindent Für die Auswertung werden Messpunkte entlang der Linie $y = 2\,\mathrm{cm}$ verwendet. 
 
-Im Übergangsbereich zwischen dem inneren Spulenfeld und dem äußeren Dipolfeld sind jedoch deutliche Abweichungen von der idealisierten Fernfeldnäherung zu erkennen. Die Feldlinien verlaufen hier weder strikt parallel noch vollständig dipolartig, sondern zeigen einen kontinuierlichen Übergang zwischen beiden Strukturen. Dies lässt sich dadurch erklären, dass die Fernfeldnäherung nur für Abstände gilt, die groß gegenüber den geometrischen Abmessungen der Spule sind, was in der Messung nicht vollständig erfüllt ist.
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c}
+\hline
+$x$ (cm) & $B_y$ (mT) & $B_z$ (mT) \\
+\hline
+4  & 3{,}540 & -4{,}68 \\
+7  & 0{,}987 & -0{,}747 \\
+10 & 0{,}372 & -0{,}164 \\
+13 & 0{,}181 & -0{,}020 \\
+\hline
+\end{tabular}
+\caption{Gemessene Magnetfeldkomponenten entlang der Linie $y=2\,\mathrm{cm}$}
+\label{tab:y2_daten}
+\end{table}
 
-Zusätzlich können kleinere Asymmetrien im Feldlinienverlauf, insbesondere im rechten Bereich des Diagramms mit leicht erhöhter Feldstärke, auf experimentelle Unsicherheiten zurückgeführt werden. Dazu zählen insbesondere eine mögliche ungenaue Positionierung oder Ausrichtung der Hallsonde sowie Messungenauigkeiten bei schwachen Feldern. Auch die gewählte Skalierung der Pfeillängen kann den visuellen Eindruck der Feldverteilung beeinflussen.
+\noindent Der Betrag des Magnetfeldes ergibt sich aus
 
-Insgesamt zeigt das Feldliniendiagramm eine gute qualitative Übereinstimmung mit der Fernfeldnäherung im äußeren Bereich, während im Nahbereich die reale Geometrie der Spule dominiert und daher deutliche Abweichungen auftreten.
+\begin{equation}
+B = \sqrt{B_y^2 + B_z^2}.
+\end{equation}
+
+\noindent Die daraus berechneten Feldbeträge und Abstände zur Spulenachse sind in Tabelle \ref{tab:betraege} aufgelistete:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c}
+\hline
+$x$ (cm) & $r$ (cm) & $B$ (mT) \\
+\hline
+7  & 7{,}28  & 1{,}24 \\
+10 & 10{,}20 & 0{,}41 \\
+13 & 13{,}15 & 0{,}182 \\
+\hline
+\end{tabular}
+\caption{Berechnete Feldbeträge und Abstände für $y=2\,\mathrm{cm}$}
+\label{tab:betraege}
+\end{table}
+
+\noindent Für zwei Punkte folgt aus der Fernfeldnäherung:
+
+\begin{equation}
+\frac{B(r_1)}{B(r_2)}=\left(\frac{r_2}{r_1}\right)^3.
+\end{equation}
+
+\noindent Für den Bereich zwischen $r_7$ und $r_{10}$ ergibt sich ein theoretischer Wert von $\frac{B_7}{B_{10}}\approx 2{,}75$\,, während experimentell
+$\frac{B_7}{B_{10}}\approx 3{,}04$ gilt. Die relative Abweichung beträgt damit
+
+\begin{equation}
+\delta_{7\to10}=
+\frac{|3{,}04-2{,}75|}{2{,}75}
+\approx 11\,\%\,.
+\end{equation}
+
+\noindent Für den Bereich zwischen $r_{10}$ und $r_{13}$ ergibt sich theoretisch
+$\frac{B_{10}}{B_{13}}\approx 2{,}15$\,, während experimentell
+$\frac{B_{10}}{B_{13}}\approx 2{,}23$ gilt. Die relative Abweichung entspricht hierbei
+
+\begin{equation}
+\delta_{10\to13}=
+\frac{|2{,}23-2{,}15|}{2{,}15}
+\approx 4\,\%\,.
+\end{equation}
+
+\noindent Die deutlich geringere Abweichung im Bereich zwischen $10\,\mathrm{cm}$ und $13\,\mathrm{cm}$ im Vergleich zum Bereich zwischen $7\,\mathrm{cm}$ und $10\,\mathrm{cm}$ zeigt, dass die Fernfeldnäherung mit zunehmendem Abstand von der Spule besser erfüllt ist. Dies spricht dafür, dass sich die weiter entfernten Messpunkte bereits stärker im Übergang zum dipolartigen Fernfeld befinden, während die näheren Punkte noch stärker von der endlichen Geometrie der Spule beeinflusst werden.  Auch aufgrund des vergleichsweise geringen Abstands zur Spule ist davon auszugehen, dass es sich eher um einen Übergangsbereich zwischen Nah- und Fernfeld handelt als um ein ideales Fernfeld. Kleine Abweichungen lassen sich durch Messunsicherheiten der Hallsonde sowie durch die endliche Ausdehnung der Spule erklären.

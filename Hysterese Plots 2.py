@@ -11,7 +11,7 @@ B = [
     -0.408, -1.867, -4.229, -7.218, -10.411, -13.545, -16.247,
     -18.808, -20.541, -21.438
 ]
-
+B = [-b for b in B]
 H = [
      176.4705882,  490.5882353,   720.0,        1030.588235,
     1521.176471,  1775.294118,  2156.470588,  2470.588235,
@@ -34,7 +34,7 @@ plt.figure(figsize=(7, 5))
 plt.plot(H, B, marker='o', linewidth=1)
 plt.xlabel("H (A/m)")
 plt.ylabel("B (mT)")
-plt.title("Hysteresekurve")
+plt.title("Hysteresekurve des geblätterten Kerns")
 plt.grid(True)
 plt.tight_layout()
 plt.show()
