@@ -2,36 +2,28 @@
 Magnetische Felder spielen in zahlreichen technischen Anwendungen eine zentrale Rolle, insbesondere in der Energieübertragung, der Signalverarbeitung sowie in elektrischen Maschinen. Ein grundlegendes Verständnis ihrer Entstehung und der Wechselwirkung mit Materie ist daher essenziell. Im Folgenden werden die physikalischen Grundlagen beschrieben, die das Verhalten von Magnetfeldern sowie ferromagnetischen Materialien bestimmen. Besonders im Fokus steht dabei die sogenannte Hysterese, welche die verzögerte Reaktion der Magnetisierung auf ein äußeres Magnetfeld beschreibt.
 
 \subsection{Magnetfeld einer stromdurchflossenen Spule}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth]{theorie-spule.png}
-    \caption{Exemplarische Darstellung des Magnetfeldes einer stromdurchflossenen Spule.} \label{fig:Spule}
-\end{figure}
-
 \noindent Elektrische Ströme erzeugen Magnetfelder, deren Eigenschaften durch die Maxwell-Gleichungen beschrieben werden. Für magnetische Felder gilt insbesondere für die magnetische Flussdichte $\vec{B}$ die Quellenfreiheit
 
 \begin{equation}
 \nabla \cdot \vec{B} = 0,
 \end{equation}
 
-sowie im stationären Fall das Ampèresche Gesetz
-
+\noindent sowie im stationären Fall das Ampèresche Gesetz 
 \begin{equation}
-\nabla \times \vec{B} = \mu_0 \vec{J}.
+\nabla \times \vec{B} = \mu_0 \vec{J}\,.
 \end{equation}
 
-\noindent Hierbei bezeichnet $\mu_0$ die magnetische Feldkonstante und $\vec{J}$ die Stromdichte. Diese Beziehungen verdeutlichen, dass Magnetfeldlinien stets geschlossen verlaufen und direkt durch elektrische Ströme erzeugt werden. \\
+\noindent Hierbei bezeichnet $\mu_0$ die magnetische Feldkonstante und $\vec{J}$ die Stromdichte. Diese Beziehungen verdeutlichen, dass Magnetfeldlinien stets geschlossen verlaufen und direkt durch elektrische Ströme erzeugt werden.~\cite[S.102 ff.]{demtroderA} \\
 Zur quantitativen Beschreibung des Magnetfeldes dient das Biot-Savart-Gesetz
 
 \begin{equation}
-\vec{B}(\vec{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\vec{l}' \times (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3}.
+\vec{B}(\vec{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\vec{l}' \times (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3}\,.
 \end{equation}
 
 \noindent Dabei ist $I$ die Stromstärke, $d\vec{l}'$ ein Linienelement entlang des stromdurchflossenen Leiters, $\vec{r}$ der Beobachtungspunkt und $\vec{r}'$ der Ort des Stromelements. Für eine lange Spule ergibt sich daraus im Inneren ein nahezu homogenes Magnetfeld in Abhängigkeit von der Stromstärke $I$ und der Anzahl der Windungen $N$:
 
 \begin{equation}
-B \approx \mu_0 \frac{N I}{l}.
+B \approx \mu_0 \frac{N I}{l}\,.
 \end{equation}
 
 \noindent Diese Eigenschaft wird in vielen technischen Anwendungen genutzt, etwa in Elektromagneten oder Spulen zur gezielten Erzeugung definierter Magnetfelder. Die zugehörige magnetische Feldstärke $H$ ist gegeben durch
@@ -39,7 +31,7 @@ B \approx \mu_0 \frac{N I}{l}.
 \begin{equation}
 H = \frac{N I}{l_{\text{mag}}}\, ,
 \end{equation}
-\noindent wobei $l_{\text{mag}}$ die effektive magnetische Länge des Feldweges bezeichnet.
+\noindent wobei $l_{\text{mag}}$ die effektive magnetische Länge des Feldweges bezeichnet.~\cite[S. 895 ff.]{Tipler}
 
 \subsection{Fernfeldverhalten magnetischer Quellen}
 Außerhalb der Spule nimmt das Magnetfeld stark mit dem Abstand ab. 
@@ -73,15 +65,9 @@ Das resultierende Magnetfeld im Material ergibt sich zu
 \vec{B} = \mu_0 \mu_r \vec{H}.
 \end{equation}
 
-\noindent Die relative Permeabilität $\mu_r$ ist eine zentrale Materialkonstante und beschreibt, wie stark ein Stoff ein äußeres Magnetfeld verstärken kann. Materialien mit hoher Permeabilität werden gezielt eingesetzt, um magnetische Flüsse zu bündeln und zu leiten, beispielsweise in Transformatoren oder Elektromotoren.
+\noindent Die relative Permeabilität $\mu_r$ ist eine zentrale Materialkonstante und beschreibt, wie stark ein Stoff ein äußeres Magnetfeld verstärken kann. Materialien mit hoher Permeabilität werden gezielt eingesetzt, um magnetische Flüsse zu bündeln und zu leiten, beispielsweise in Transformatoren oder Elektromotoren.~\cite[S.920 ff.]{Tipler}
 
 \subsection{Induktive Kopplung}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth]{theorie-induktion.png}
-    \caption{Exemplarische Darstellung der induktiven Kopplung zweier Spulen über einen gemeinsamen ferromagnetischen Kern.} \label{fig:Induktion}
-\end{figure}
 
 \noindent Werden zwei Spulen über einen gemeinsamen ferromagnetischen Kern gekoppelt, so kann eine zeitliche Änderung des Stroms in der Primärspule eine Spannung $U_{\text{ind}}$ in der Sekundärspule induzieren. Dieser Zusammenhang wird durch
 
@@ -95,34 +81,51 @@ Werden zwei Spulen über einen gemeinsamen ferromagnetischen Kern gekoppelt, kan
 \begin{equation}
 U_2 = \omega \, \mu_0 \mu_r \frac{N_1 N_2 A}{l_{\text{mag}}} \cdot I_1\, ,
 \end{equation}
-\noindent wobei $U_2$ die induzierte Spannung der Sekundärspule, $\omega$ die Kreisfrequenz, $N_1$ und $N_2$ die Windungszahlen der beiden Spulen, $A$ die Querschnittsfläche des Kerns und $I_1$ der Strom in der Primärspule sind. \\
+\noindent wobei $U_2$ die induzierte Spannung der Sekundärspule, $\omega$ die Kreisfrequenz, $N_1$ und $N_2$ die Windungszahlen der beiden Spulen, $A$ die Querschnittsfläche des Kerns und $I_1$ der Strom in der Primärspule sind.~\cite[S. 948]{Tipler} \\
 Dieser Zusammenhang bildet die Grundlage für Transformatoren und viele weitere Anwendungen der elektrischen Energietechnik. Durch Umstellen kann daraus die relative Permeabilität bestimmt werden:
 \begin{equation}
 \mu_r = \frac{U_2 \, l_{\text{mag}}}{\omega \, \mu_0 \, N_1 N_2 \, A \, I_1}.
-\end{equation}
-
+\end{equation} \label{eq:U2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{theorie-induktion.png}
+    \caption{Exemplarische Darstellung der induktiven Kopplung zweier Spulen über einen gemeinsamen ferromagnetischen Kern.~\cite{Skript}} \label{fig:Induktion}
+\end{figure}
 \subsection{Ferromagnetismus und Hysterese}
 
 Ferromagnetische Materialien weisen eine besonders starke Wechselwirkung mit Magnetfeldern auf. Ursache hierfür sind sogenannte Weiss'sche Bezirke, in denen magnetische Momente bereits parallel ausgerichtet sind. Ohne äußeres Feld sind diese Bezirke zufällig orientiert, sodass keine makroskopische Magnetisierung vorliegt.
 Wird ein äußeres Magnetfeld angelegt, wachsen die Bezirke in Feldrichtung, wodurch die Magnetisierung stark zunimmt. Dieser Prozess ist jedoch nicht vollständig reversibel, da strukturelle Defekte und innere Spannungen eine Rückorientierung behindern.
 Die Folge ist die sogenannte Hysterese. Das bedeutet, dass die magnetische Flussdichte $B$ nicht nur vom aktuellen Wert der Feldstärke $H$, sondern auch von der vorherigen Magnetisierungsgeschichte abhängt. Trägt man $B$ gegen $H$ auf, ergibt sich eine charakteristische Hystereseschleife. \\
-Wichtige Kenngrößen dieser sind die Sättigungsflussdichte $B_{\text{sat}}$, die Remanenz $B_r$ und die Koerzitivfeldstärke $H_c$.\\
+Wichtige Kenngrößen dieser sind die Sättigungsflussdichte $B_{\text{sat}}$, die Remanenz $B_r$ und die Koerzitivfeldstärke $H_c$.~\cite[S. 920 ff.]{Tipler}\\
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{theorie-hysterese.png}
-    \caption{Beispiel einer Hysteresekurve mit Darstellung der wichtigsten Kenngrößen.} \label{fig:Hysterese}
+    
+    \begin{minipage}[t]{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{theorie-weisschebezirke.png}
+        \caption{Weiss'sche Bezirke in einem ferromagnetischen Material.~\cite{leifi}}
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}[t]{0.45\linewidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{theorie-hysterese.png}
+        \caption{Hysteresekurve mit Darstellung der wichtigsten Kenngrößen.\cite{Skript}}
+    \end{minipage}
+    
 \end{figure}
+\noindent
 Die Fläche der Hystereseschleife entspricht der pro Zyklus dissipierten Energie $W_{\text{Verlust}}$:
 
 \begin{equation}
 W_{\text{Verlust}} = \oint H \, dB.
 \end{equation}
 
-\noindent Diese Energieverluste sind insbesondere bei Wechselstromanwendungen von großer Bedeutung, da sie zur Erwärmung und damit zu Effizienzverlusten führen.
+\noindent Diese Energieverluste sind insbesondere bei Wechselstromanwendungen von großer Bedeutung, da sie zur Erwärmung und damit zu Effizienzverlusten führen.~\cite[S. 920 ff.]{Tipler}
 
 \subsection{Technische Bedeutung magnetischer Materialien}
 
 Je nach Form der Hysteresekurve unterscheidet man zwischen magnetisch weichen und magnetisch harten Materialien.Magnetisch weiche Materialien besitzen eine schmale Hystereseschleife und geringe Verluste. Sie werden bevorzugt in Transformatoren, Induktivitäten und elektrischen Maschinen eingesetzt, da sie eine effiziente Ummagnetisierung ermöglichen. 
 Magnetisch harte Materialien zeichnen sich hingegen durch eine große Remanenz und hohe Koerzitivfeldstärken aus. Sie werden zur Herstellung von Permanentmagneten verwendet. Ein zentrales Problem in der Praxis sind Wirbelstromverluste, die insbesondere in massiven metallischen Kernen auftreten. \\ 
-Durch die Verwendung geblätterter, elektrisch isolierter Schichten können diese Verluste deutlich reduziert werden. Dieses Prinzip ist heute ein Standard in der Konstruktion moderner Transformatoren und Elektromotoren. 
+Durch die Verwendung geblätterter, elektrisch isolierter Schichten können diese Verluste deutlich reduziert werden. Dieses Prinzip ist heute ein Standard in der Konstruktion moderner Transformatoren und Elektromotoren. ~\cite[S. 923 ff.]{Tipler}
 \newpage
