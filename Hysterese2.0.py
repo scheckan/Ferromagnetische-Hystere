@@ -68,28 +68,34 @@ def prepare_B(B_raw, invert=True):
     return -B if invert else B
 
 def h_zero_crossings(H, B):
-    """B bei H=0"""
+    """Interpolierte Schnittpunkte mit H = 0 -> Remanenzpunkte"""
     points = []
     for i in range(len(H) - 1):
         h1, h2 = H[i], H[i + 1]
         b1, b2 = B[i], B[i + 1]
-        if h1 * h2 < 0:
+
+        if h1 == 0:
+            points.append((0.0, b1, i))
+        elif h1 * h2 < 0:
             b0 = b1 - h1 * (b2 - b1) / (h2 - h1)
             points.append((0.0, b0, i))
     return points
 
 def b_zero_crossings(H, B):
-    """H bei B=0"""
+    """Interpolierte Schnittpunkte mit B = 0 -> Koerzitivfeldpunkte"""
     points = []
     for i in range(len(B) - 1):
         b1, b2 = B[i], B[i + 1]
         h1, h2 = H[i], H[i + 1]
-        if b1 * b2 < 0:
+
+        if b1 == 0:
+            points.append((h1, 0.0, i))
+        elif b1 * b2 < 0:
             h0 = h1 - b1 * (h2 - h1) / (b2 - b1)
             points.append((h0, 0.0, i))
     return points
 
-def choose_points(plot_name, H, B):
+def select_characteristic_points(plot_name, H, B):
     br_candidates = h_zero_crossings(H, B)
     hc_candidates = b_zero_crossings(H, B)
 
@@ -99,40 +105,46 @@ def choose_points(plot_name, H, B):
     Bsat = B[idx_sat]
 
     if plot_name == "Vollkern":
-        # Br: größter positiver Wert (~1 mT)
-        br_point = max(br_candidates, key=lambda p: p[1])
+        # Beide Remanenzpunkte bei H=0
+        # -> aus deinen Daten: zwei sinnvolle Schnittpunkte
+        br_points = br_candidates[:2]
 
-        # Hc: kleinster positiver Schnittpunkt
-        positive_hc = [p for p in hc_candidates if p[0] > 0]
-
-        if positive_hc:
-            hc_point = min(positive_hc, key=lambda p: p[0])
-        else:
-            hc_point = min(hc_candidates, key=lambda p: abs(p[0]))
+        # Beide Koerzitivpunkte bei B=0
+        # -> aus deinen Daten: genau zwei Schnittpunkte
+        hc_points = hc_candidates[:2]
 
     elif plot_name == "Geblätterter Kern":
-        # Br nahe 0
-        br_point = min(br_candidates, key=lambda p: abs(p[1]))
+        # Beide Remanenzpunkte bei H=0
+        br_points = br_candidates[:2]
 
-        # größter positiver Hc
-        positive_hc = [p for p in hc_candidates if p[0] > 0]
+        # Beim geblätterten Kern entstehen mehrere Nullstellen durch Rauschen.
+        # Für Hc verwenden wir:
+        # - den größten positiven Schnittpunkt
+        # - den betragsgrößten negativen Schnittpunkt
+        hc_pos = [p for p in hc_candidates if p[0] > 0]
+        hc_neg = [p for p in hc_candidates if p[0] < 0]
 
-        if positive_hc:
-            hc_point = max(positive_hc, key=lambda p: p[0])
-        else:
-            hc_point = min(hc_candidates, key=lambda p: abs(p[0]))
+        hc_p = max(hc_pos, key=lambda p: p[0]) if hc_pos else None
+        hc_n = min(hc_neg, key=lambda p: p[0]) if hc_neg else None
+
+        hc_points = []
+        if hc_p is not None:
+            hc_points.append(hc_p)
+        if hc_n is not None:
+            hc_points.append(hc_n)
 
     else:
-        br_point = min(br_candidates, key=lambda p: abs(p[1]))
-        hc_point = min(hc_candidates, key=lambda p: abs(p[0]))
+        br_points = br_candidates[:2]
+        hc_points = hc_candidates[:2]
 
-    return br_point, hc_point, (Hsat, Bsat)
+    # Mittelwerte über die Beträge
+    Br_mean = np.mean([abs(p[1]) for p in br_points]) if br_points else None
+    Hc_mean = np.mean([abs(p[0]) for p in hc_points]) if hc_points else None
+
+    return br_points, hc_points, Br_mean, Hc_mean, (Hsat, Bsat)
 
 def plot_hysteresis(H, B, title, plot_name):
-    br_point, hc_point, sat_point = choose_points(plot_name, H, B)
-
-    Br = br_point[1]
-    Hc = hc_point[0]
+    br_points, hc_points, Br_mean, Hc_mean, sat_point = select_characteristic_points(plot_name, H, B)
     Hsat, Bsat = sat_point
 
     plt.figure(figsize=(8, 6))
@@ -145,11 +157,25 @@ def plot_hysteresis(H, B, title, plot_name):
         label='Hystereseschleife'
     )
 
-    plt.scatter(Hc, 0, color='red', s=70, zorder=5,
-                label=fr'$H_c = {Hc:.0f}\,\mathrm{{A/m}}$')
-    plt.scatter(0, Br, color='blue', s=70, zorder=5,
-                label=fr'$B_r = {Br:.2f}\,\mathrm{{mT}}$')
-    plt.scatter(Hsat, Bsat, color='magenta', s=70, zorder=5,
+    # Remanenzpunkte markieren
+    for i, p in enumerate(br_points):
+        plt.scatter(p[0], p[1], color='blue', s=90, zorder=6)
+
+    # Koerzitivpunkte markieren
+    for i, p in enumerate(hc_points):
+        plt.scatter(p[0], p[1], color='red', s=90, zorder=6)
+
+    # Sättigungspunkt markieren
+    plt.scatter(Hsat, Bsat, color='magenta', s=90, zorder=6)
+
+    # Dummy-Einträge für Legende mit gemittelten Werten
+    if Br_mean is not None:
+        plt.scatter([], [], color='blue',
+                    label=fr'$B_r = {Br_mean:.2f}\,\mathrm{{mT}}$')
+    if Hc_mean is not None:
+        plt.scatter([], [], color='red',
+                    label=fr'$H_c = {Hc_mean:.0f}\,\mathrm{{A/m}}$')
+    plt.scatter([], [], color='magenta',
                 label=fr'$B_{{sat}} = {Bsat:.2f}\,\mathrm{{mT}},\; H_{{sat}} = {Hsat:.0f}\,\mathrm{{A/m}}$')
 
     plt.axhline(0, color='black', linewidth=1.0)
@@ -164,8 +190,16 @@ def plot_hysteresis(H, B, title, plot_name):
     plt.show()
 
     print(f"\n--- {title} ---")
-    print(f"Br   = {Br:.3f} mT")
-    print(f"Hc   = {Hc:.3f} A/m")
+    for idx, p in enumerate(br_points, start=1):
+        print(f"Br-Punkt {idx}: B = {p[1]:.3f} mT bei H = {p[0]:.1f} A/m")
+    if Br_mean is not None:
+        print(f"Br (gemittelt) = {Br_mean:.3f} mT")
+
+    for idx, p in enumerate(hc_points, start=1):
+        print(f"Hc-Punkt {idx}: H = {p[0]:.3f} A/m bei B = {p[1]:.1f} mT")
+    if Hc_mean is not None:
+        print(f"Hc (gemittelt) = {Hc_mean:.3f} A/m")
+
     print(f"Bsat = {Bsat:.3f} mT")
     print(f"Hsat = {Hsat:.3f} A/m")
 

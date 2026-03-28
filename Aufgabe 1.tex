@@ -5,15 +5,15 @@
     \caption{Feldliniendiagramm der Spule durch graphische Auswertung der Messdaten.} \label{fig:Feldlinien}
 \end{figure}
 
-Das Feldliniendiagramm in Abbildung \ref{fig:Feldlinien} wurde auf Grundlage der gemessenen Magnetfeldstärken graphisch erstellt. Die Messpunkte wurden entsprechend ihrer räumlichen Position angeordnet und mit Pfeilen versehen, die sowohl die Richtung als auch die relative Stärke des Magnetfeldes darstellen. Zusätzlich dient eine Farbskala der Veranschaulichung der Feldstärke, wobei dunklere Farben höhere Feldbeträge kennzeichnen. Die Leerstelle im Zentrum entspricht der Position der Spule selbst, in der keine Messungen durchgeführt wurden. \\
+Das Feldliniendiagramm in Abbildung \ref{fig:Feldlinien} wurde auf Grundlage der gemessenen Magnetfeldstärken graphisch erstellt. Die Messpunkte wurden entsprechend ihrer räumlichen Position angeordnet und mit Pfeilen versehen, die sowohl die Richtung als auch die relative Stärke des Magnetfeldes darstellen. Zusätzlich dient die Farbskala der Veranschaulichung der Feldstärke, wobei dunklere Farben höhere Feldbeträge kennzeichnen. Die Leerstelle im Zentrum entspricht der Position der Spule selbst, in der keine Messungen durchgeführt wurden. \\
 Grundsätzlich zeigt sich der erwartete Verlauf eines Spulenfeldes: Die Feldlinien treten auf der rechten Seite aus und werden auf der linken Seite wieder zurückgeführt. Im Inneren einer idealen Spule verlaufen die Feldlinien dicht und nahezu parallel, was auf ein homogenes Magnetfeld hindeutet. Da im vorliegenden Versuch jedoch nur außerhalb der Spule Messpunkte aufgenommen wurden, kann dieser Bereich nicht direkt dargestellt werden. Dennoch lässt sich aus dem Verlauf unmittelbar nach dem Austritt erkennen, dass die Feldlinien zunächst nur schwach gekrümmt sind, was auf ein starkes und annähernd homogenes Feld im Inneren schließen lässt.~\cite[S. 900]{Tipler}\\
 Auffällig ist, dass die Feldstärke direkt am Spulenaustritt teilweise geringer erscheint als in etwas weiter entfernten Zonen. Dies widerspricht zunächst der physikalischen Erwartung, da das Magnetfeld in unmittelbarer Nähe zur Spule sein Maximum besitzen sollte. Die beobachtete Abweichung lässt sich jedoch auf die Art der grafischen Darstellung im Streamplot zurückführen.
-Zum einen beruht der Plot auf diskreten Messpunkten, zwischen denen interpoliert wird. In Bereichen mit starken Gradienten, insbesondere am Rand der Spule, führt diese Interpolation oft zu einer Glättung, wodurch lokale Maxima abgeschwächt erscheinen. Zum anderen kann die Skalierung der Vektoren die Wahrnehmung der Feldstärke verfälschen: Häufig werden Pfeile im Streamplot normiert, sodass ihre Länge nicht direkt proportional zur tatsächlichen Feldstärke ist. Auf diese Weise entsteht unter Umständen der Eindruck eines schwächeren Feldes, selbst wenn die Farbskala höhere Werte ausweist. Darüber hinaus beeinflusst auch die gewählte Dichte der Stromlinien das Erscheinungsbild. Die Linien werden so verteilt, dass das Diagramm insgesamt ausgewogen wirkt. Dadurch werden Bereiche mit starkem Feld nicht zwangsläufig durch eine größere Liniendichte hervorgehoben, was die visuelle Interpretation zusätzlich erschwert. \\
+Zum einen beruht der Plot auf diskreten Messpunkten, zwischen denen interpoliert wird. In Bereichen mit starken Gradienten, insbesondere am Rand der Spule, führt diese Interpolation oft zu einer Glättung, wodurch lokale Maxima abgeschwächt erscheinen. Zum anderen kann die Skalierung der Vektoren die Wahrnehmung der Feldstärke verfälschen: Die Pfeile im Streamplot werden normiert, sodass ihre Länge nicht direkt proportional zur tatsächlichen Feldstärke ist. Auf diese Weise entsteht unter Umständen der Eindruck eines schwächeren Feldes, selbst wenn die Farbskala höhere Werte ausweist. Darüber hinaus beeinflusst auch die gewählte Dichte der Stromlinien das Erscheinungsbild. Die Linien werden so verteilt, dass das Diagramm insgesamt ausgewogen wirkt. Dadurch werden Bereiche mit starkem Feld nicht zwangsläufig durch eine größere Liniendichte hervorgehoben, was die visuelle Interpretation zusätzlich erschwert. \\
 Mit wachsendem Abstand von der Spule verändert sich die Feldstruktur deutlich: Die Feldlinien biegen nach oben und unten ab und bilden in den äußeren Regionen geschlossene, bogenförmige Verläufe. Gleichzeitig nimmt die Feldstärke insgesamt ab, was sich sowohl an der geringeren Liniendichte als auch an der helleren Farbgebung zeigt. \\
-Zur Überprüfung der Fernfeldnäherung wird das Magnetfeld im äußeren Bereich der Spule betrachtet. Im Fernfeld kann die Spule als magnetischer Dipol beschrieben werden, sodass gilt
+Zur Überprüfung der Fernfeldnäherung wird das Magnetfeld im äußeren Bereich der Spule betrachtet. Im Fernfeld kann die Spule als magnetischer Dipol beschrieben werden, sodass gilt:
 
 \begin{equation}
-B(r) \propto \frac{1}{r^3}. \label{eq:Fernfeld}
+B(r) \propto \frac{1}{r^3}\,. \label{eq:Fernfeld}
 \end{equation}
 
 \noindent Für die Auswertung werden Messpunkte entlang der Linie $y = 2\,\mathrm{cm}$ verwendet. 
@@ -37,7 +37,7 @@ $x$ (cm) & $B_y$ (mT) & $B_z$ (mT) \\
 \noindent Der Betrag des Magnetfeldes ergibt sich aus
 
 \begin{equation}
-B = \sqrt{B_y^2 + B_z^2}.
+B = \sqrt{B_\text{y}^2 + B_\text{z}^2}\,.
 \end{equation}
 
 \noindent Die daraus berechneten Feldbeträge und Abstände zur Spulenachse sind in Tabelle \ref{tab:betraege} aufgelistete:
