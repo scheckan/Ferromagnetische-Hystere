@@ -2,12 +2,12 @@
 Zur Bestimmung der relativen Permeabilität wird der in Gleichung (\ref{Gl12}) dargestellte Zusammenhang zwischen Primärstrom und induzierter Spannung, umgestellt nach $\mu_r$, verwendet:
 
 \begin{equation}
-    \mu_r = \frac{U_2 \cdot l}{\omega \cdot \mu_0 \cdot N_1 N_2 \cdot A \cdot I_1}
+    \mu_\mathrm{r} = \frac{U_2 \cdot l}{\omega \cdot \mu_0 \cdot N_1 N_2 \cdot A \cdot I_1}
 \end{equation}
 
 \noindent mit $\omega = 2\pi f$. \\
 Mit den durch den Versuchsaufbau gegebenen und bestimmten Werten für die Induktivität $L$, die Anzahl der Windungen $N$, die
-Länge des Kerns $l$ und der Querschnittsfläche $A$ kann $\mu_r$ berechnet werden.
+Länge des Kerns $l$ und der Querschnittsfläche $A$ kann $\mu_\mathrm{r}$ berechnet werden.
 \begin{align}
     N &= 600 \\
     f &= 50\,\text{Hz} \\
@@ -22,7 +22,7 @@ Länge des Kerns $l$ und der Querschnittsfläche $A$ kann $\mu_r$ berechnet werd
 Anschließend mussen die Unsicherheiten für $\mu_r$ unter Berücksichtigung der Fehlerfortpflanzung berechnet werden, um die Genauigkeit der Ergebnisse zu bewerten. Da nur Unsicherheiten für $l$ und $A$ gegeben sind, folgt:
 
 \begin{equation}
-    \frac{\Delta \mu_r}{\mu_r}
+    \frac{\Delta \mu_\mathrm{r}}{\mu_\mathrm{r}}
     =
     \sqrt{
         \left(\frac{\Delta l}{l}\right)^2
@@ -39,7 +39,7 @@ Anschließend mussen die Unsicherheiten für $\mu_r$ unter Berücksichtigung der
 \centering
 \begin{tabular}{c c c c}
 \hline
-$U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_r$ \\
+$U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_\mathrm{r}$ \\
 \hline
 2 & 0{,}085 & 0{,}913 & 33{,}6 \pm 2{,}6 \\
 4 & 0{,}159 & 1{,}948 & 38{,}4 \pm 2{,}9 \\
@@ -47,14 +47,14 @@ $U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_r$ \\
 8 & 0{,}274 & 4{,}370 & 50{,}0 \pm 3{,}8 \\
 \hline
 \end{tabular}
-\caption{Ergebnisse für die Permeabilität $\mu_r$ des Vollkerns.}
+\caption{Ergebnisse für die Permeabilität $\mu_\mathrm{r}$ des Vollkerns.}
 \label{tab:P1}
 \end{table}
 
 
 \noindent Damit ergibt sich ein Mittelwert für die relative Permeabilität von:
 \begin{equation}
-    \overline{\mu_r} \approx 41{,}6.
+    \overline{\mu_\mathrm{r}} \approx 41{,}6.
 \end{equation}
 
 \noindent Für den geblätterten Kern ergeben sich folgende Werte:
@@ -62,7 +62,7 @@ $U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_r$ \\
 \centering
 \begin{tabular}{c c c c}
 \hline
-$U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_r$ \\
+$U_{\text{Netz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_\mathrm{r}$ \\
 \hline
 2 & 0{,}008 & 1{,}972 & 645{,}9 \pm 30{,}7 \\
 4 & 0{,}016 & 3{,}989 & 653{,}3 \pm 31{,}1 \\
@@ -70,16 +70,16 @@ $U_{\text{Ntz}}$ (V) & $I_1$ (A) & $U_2$ (V) & $\mu_r$ \\
 8 & 0{,}029 & 8{,}07  & 729{,}2 \pm 34{,}7 \\
 \hline
 \end{tabular}
-\caption{Ergebnisse für die Permeabilität $\mu_r$ des geblätterten Eisenkerns.}
+\caption{Ergebnisse für die Permeabilität $\mu_\mathrm{r}$ des geblätterten Eisenkerns.}
 \label{tab:P2}
 \end{table}
 
 \noindent Damit ergibt sich ein Mittelwert für die relative Permeabilität von:
 \begin{equation}
-    \overline{\mu_r} \approx 686{,}1.
+    \overline{\mu_\mathrm{r}} \approx 686{,}1.
 \end{equation}
 
-\noindent Die Auswertung zeigt einen deutlichen Unterschied zwischen Vollkern und geblättertem Kern. Während für den Vollkern eine relative Permeabilität im Bereich von $\mu_r \approx 40$ bestimmt wird, liegt der Wert für den geblätterten Kern mit $\mu_r \approx 700$ deutlich höher. 
+\noindent Die Auswertung zeigt einen deutlichen Unterschied zwischen Vollkern und geblättertem Kern. Während für den Vollkern eine relative Permeabilität im Bereich von $\mu_\mathrm{r} \approx 40$ bestimmt wird, liegt der Wert für den geblätterten Kern mit $\mu_\mathrm{r} \approx 700$ deutlich höher. 
 Beim Vollkern treten im Wechselstrombetrieb verstärkt Wirbelströme auf, die zu zusätzlichen Verlusten führen und das effektive Magnetfeld im Inneren des Kerns schwächen. Dadurch wird die magnetische Flussdichte reduziert, was sich in einer deutlich kleineren scheinbaren Permeabilität äußert. Der Kern verhält sich in diesem Fall weniger „leitfähig“ für das Magnetfeld.
 Im Gegensatz dazu ist der geblätterte Kern aus dünnen, elektrisch voneinander isolierten Blechen aufgebaut. Diese Schichtung unterdrückt die Ausbildung großflächiger Wirbelströme erheblich. Dadurch bleiben die magnetischen Verluste kleiner und das Material kann seine intrinsischen ferromagnetischen Eigenschaften besser entfalten. Die resultierende höhere Permeabilität bedeutet, dass das Magnetfeld effizienter im Kern geführt wird.~\cite[S. 947]{Tipler} \\
 Die Messergebnisse bestätigen somit qualitativ, dass durch die Laminierung des Kerns die magnetische Leitfähigkeit deutlich verbessert wird. Gleichzeitig erklärt dies, warum in technischen Anwendungen wie Transformatoren oder Elektromotoren bevorzugt geblätterte Eisenkerne eingesetzt werden, insbesondere bei Wechselstrom.

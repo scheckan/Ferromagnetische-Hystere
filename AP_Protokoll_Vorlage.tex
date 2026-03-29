@@ -23,7 +23,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
 
-
+\urlstyle{same}
 
 
 
@@ -76,10 +76,15 @@ Antonia Scheck
 
 \newpage
 
+\pagenumbering{Roman} % große römische Zahlen (I, II, III)
+\setcounter{page}{1}
+
 \tableofcontents
 \thispagestyle{empty}
 \cleardoublepage
 
+\pagenumbering{Roman} % große römische Zahlen (I, II, III)
+\setcounter{page}{2}
 
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
